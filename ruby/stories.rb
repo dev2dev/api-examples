@@ -16,9 +16,9 @@ class StoryFinder
 
   def find_stories(name)
     request("/locations/named/#{URI.escape(name)}") do |response|
-      location = JSON[response.body]['locations'].detect {|l| l['display_name'] == name}
-      raise Exception.new "No location named #{name}" unless location
-      request("/locations/#{URI.escape(location['uuid'])}/stories") do |response|
+      locations = JSON[response.body]['locations']
+      raise Exception.new "No location named #{name}" if locations.empty?
+      request("/locations/#{URI.escape(locations.first['uuid'])}/stories") do |response|
         JSON[response.body]['stories']
       end
     end
@@ -40,14 +40,14 @@ class StoryFinder
   end
 end
 
-unless ARGV.length == 2
-  puts "Usage: #{$0} <developer key> <shared secret>"
+unless ARGV.length == 3
+  puts "Usage: #{$0} <developer key> <shared secret> <location>"
   exit 1
 end
 
 key = ARGV[0]
 secret = ARGV[1]
-location_name = "Brooklyn, NY"
+location_name = ARGV[2]
 
 begin
   stories = StoryFinder.new(ARGV[0], ARGV[1]).find_stories(location_name)
