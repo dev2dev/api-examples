@@ -45,12 +45,8 @@ unless ARGV.length == 3
   exit 1
 end
 
-key = ARGV[0]
-secret = ARGV[1]
-location_name = ARGV[2]
-
 begin
-  stories = StoryFinder.new(ARGV[0], ARGV[1]).find_stories(location_name)
+  stories = StoryFinder.new(ARGV[0], ARGV[1]).find_stories(ARGV[2])
   if stories.empty?
     puts "Found 0 stories"
   else
@@ -61,5 +57,5 @@ begin
   end
 rescue Exception => e
   puts e.message
-  exit 1
+  exit 2
 end
