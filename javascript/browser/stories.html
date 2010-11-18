@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Outside.in API | JavaScript example</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
+    <script src="lib/jquery.md5.js" type="text/javascript"></script>
+    <script src="lib/mustache.js" type="text/javascript"></script>
+    <script src="lib/ICanHaz.js" type="text/javascript"></script>
+    <script src="stories.js" type="text/javascript"></script>
+    <script id="stories" type="text/html">
+      <p>Found {{total}} stories for {{location}}:</p>
+      <ol>
+        {{#stories}}
+        <li><a href="{{story_url}}" target="stories"><span class="title">{{title}}</span></a></li>
+        {{/stories}}
+      </ol>
+    </script>
+    <script id="noStories" type="text/html">
+      <p>Found 0 stories for {{location}}.</p>
+    </script>
+  </head>
+  <body>
+    <h1>Outside.in API example</h1>
+    <form action="#">
+      <p>
+        Enter your developer credentials and the name of a location to find the most recent stories for that location.
+      </p>
+      <p>
+        Developer key: <input type="text" name="key" size="30" maxlength="24"/><br/>
+        Shared secret: <input type="text" name="secret" size="12" maxlength="10"/><br/>
+      </p>
+      <p>
+        The location name can be specified as pretty much any string that identifies a region in the United States. You may not use a street address, however, as the API does not support address searches at this time. Some examples of valid location names include:
+      </p>
+      <ul>
+        <li>New York (or NY)</li>
+        <li>Brooklyn, NY</li>
+        <li>Williamsburg, NY</li>
+        <li>11211</li>
+      </ul>
+      <p>
+        Name: <input type="text" name="location" size="32"/>
+      </p>
+      <p>
+        <input type="submit" value="Go"/>
+      </p>
+    </form>
+
+    <hr/>
+    <div id="results"></div>
+  </body>
+</html>
