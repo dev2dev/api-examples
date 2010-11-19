@@ -28,8 +28,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* stories_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stories_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* stories-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "stories-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		D3D51CCA1295D16E00362803 /* StoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoriesViewController.h; sourceTree = "<group>"; };
-		D3D51CCB1295D16E00362803 /* StoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoriesViewController.m; sourceTree = "<group>"; };
+		D3D51CCA1295D16E00362803 /* StoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = StoriesViewController.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
+		D3D51CCB1295D16E00362803 /* StoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = StoriesViewController.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		D3D51CCC1295D16E00362803 /* StoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StoriesViewController.xib; path = Classes/StoriesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

@@ -9,27 +9,30 @@
 #import <UIKit/UIKit.h>
 
 
-@interface StoriesViewController : UIViewController<UITextFieldDelegate> {
-	UITextField *keyField;
-	UITextField *secretField; // XXX: replace with password field
-	UITextField *locationField;
+@interface StoriesViewController : UIViewController<UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource> {
+    UITextField *keyField;
+    UITextField *secretField; // XXX: replace with password field
+    UITextField *locationField;
+    UITableView *tableView;
 	
-	UILabel *resultLabel; // XXX: replace or augment with a scrolling table
-	
-	NSString *key;
-	NSString *secret;
-	NSString *location;
+    NSString *key;
+    NSString *secret;
+    NSString *location;
+    NSMutableArray *stories;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *keyField;
 @property (nonatomic, retain) IBOutlet UITextField *secretField;
 @property (nonatomic, retain) IBOutlet UITextField *locationField;
-@property (nonatomic, retain) IBOutlet UILabel *resultLabel;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy) NSString *secret;
 @property (nonatomic, copy) NSString *location;
+@property (nonatomic, retain) NSMutableArray *stories;
 
-- (IBAction)fetchStories:(id)sender;
+- (IBAction)goPressed:(id)sender;
+- (void)fetchStories;
+- (void)clearStories;
 
 @end
