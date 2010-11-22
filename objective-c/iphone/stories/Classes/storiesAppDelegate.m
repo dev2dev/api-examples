@@ -15,7 +15,7 @@
 @synthesize storiesViewController;
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     StoriesViewController *aStoriesViewController = [[[StoriesViewController alloc] initWithNibName:@"StoriesViewController"
                                                                                              bundle:[NSBundle mainBundle]] autorelease];
     self.storiesViewController = aStoriesViewController;

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const BASE_URL;
 
 @interface StoriesViewController : UIViewController<UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource> {
     UITextField *keyField;
@@ -18,7 +19,7 @@
     NSString *key;
     NSString *secret;
     NSString *location;
-    NSMutableArray *stories;
+    NSArray *stories;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *keyField;
@@ -29,10 +30,11 @@
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy) NSString *secret;
 @property (nonatomic, copy) NSString *location;
-@property (nonatomic, retain) NSMutableArray *stories;
+@property (nonatomic, retain) NSArray *stories;
 
 - (IBAction)goPressed:(id)sender;
-- (void)fetchStories;
-- (void)clearStories;
+- (NSArray *)fetchStoriesInLocation:(NSString *)theLocation;
+- (NSDictionary *)request:(NSString *)relativePath;
+- (NSURL *)sign:(NSString *)relativePath;
 
 @end

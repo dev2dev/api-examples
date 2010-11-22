@@ -15,6 +15,13 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		D3D51CCD1295D16E00362803 /* StoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D51CCB1295D16E00362803 /* StoriesViewController.m */; };
 		D3D51CCE1295D16E00362803 /* StoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D51CCC1295D16E00362803 /* StoriesViewController.xib */; };
+		D3D51E8E12973D8300362803 /* MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D51E8D12973D8300362803 /* MD5.m */; };
+		D3D51ED1129AC15F00362803 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D51EC5129AC15F00362803 /* NSObject+SBJSON.m */; };
+		D3D51ED2129AC15F00362803 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D51EC7129AC15F00362803 /* NSString+SBJSON.m */; };
+		D3D51ED3129AC15F00362803 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D51EC9129AC15F00362803 /* SBJsonBase.m */; };
+		D3D51ED4129AC15F00362803 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D51ECB129AC15F00362803 /* SBJsonParser.m */; };
+		D3D51ED5129AC15F00362803 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D51ECD129AC15F00362803 /* SBJsonStreamWriter.m */; };
+		D3D51ED6129AC15F00362803 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D51ECF129AC15F00362803 /* SBJsonWriter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +38,22 @@
 		D3D51CCA1295D16E00362803 /* StoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = StoriesViewController.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		D3D51CCB1295D16E00362803 /* StoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = StoriesViewController.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		D3D51CCC1295D16E00362803 /* StoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StoriesViewController.xib; path = Classes/StoriesViewController.xib; sourceTree = "<group>"; };
+		D3D51E8C12973D8300362803 /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5.h; sourceTree = "<group>"; };
+		D3D51E8D12973D8300362803 /* MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5.m; sourceTree = "<group>"; };
+		D3D51EC3129AC15F00362803 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		D3D51EC4129AC15F00362803 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		D3D51EC5129AC15F00362803 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		D3D51EC6129AC15F00362803 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		D3D51EC7129AC15F00362803 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		D3D51EC8129AC15F00362803 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		D3D51EC9129AC15F00362803 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		D3D51ECA129AC15F00362803 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		D3D51ECB129AC15F00362803 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		D3D51ECC129AC15F00362803 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		D3D51ECD129AC15F00362803 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		D3D51ECE129AC15F00362803 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		D3D51ECF129AC15F00362803 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		D3D51ED0129AC15F00362803 /* SBProxyForJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBProxyForJson.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,10 +73,26 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D3D51EC3129AC15F00362803 /* JSON.h */,
+				D3D51EC4129AC15F00362803 /* NSObject+SBJSON.h */,
+				D3D51EC5129AC15F00362803 /* NSObject+SBJSON.m */,
+				D3D51EC6129AC15F00362803 /* NSString+SBJSON.h */,
+				D3D51EC7129AC15F00362803 /* NSString+SBJSON.m */,
+				D3D51EC8129AC15F00362803 /* SBJsonBase.h */,
+				D3D51EC9129AC15F00362803 /* SBJsonBase.m */,
+				D3D51ECA129AC15F00362803 /* SBJsonParser.h */,
+				D3D51ECB129AC15F00362803 /* SBJsonParser.m */,
+				D3D51ECC129AC15F00362803 /* SBJsonStreamWriter.h */,
+				D3D51ECD129AC15F00362803 /* SBJsonStreamWriter.m */,
+				D3D51ECE129AC15F00362803 /* SBJsonWriter.h */,
+				D3D51ECF129AC15F00362803 /* SBJsonWriter.m */,
+				D3D51ED0129AC15F00362803 /* SBProxyForJson.h */,
 				1D3623240D0F684500981E51 /* storiesAppDelegate.h */,
 				1D3623250D0F684500981E51 /* storiesAppDelegate.m */,
 				D3D51CCA1295D16E00362803 /* StoriesViewController.h */,
 				D3D51CCB1295D16E00362803 /* StoriesViewController.m */,
+				D3D51E8C12973D8300362803 /* MD5.h */,
+				D3D51E8D12973D8300362803 /* MD5.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -174,6 +213,13 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* storiesAppDelegate.m in Sources */,
 				D3D51CCD1295D16E00362803 /* StoriesViewController.m in Sources */,
+				D3D51E8E12973D8300362803 /* MD5.m in Sources */,
+				D3D51ED1129AC15F00362803 /* NSObject+SBJSON.m in Sources */,
+				D3D51ED2129AC15F00362803 /* NSString+SBJSON.m in Sources */,
+				D3D51ED3129AC15F00362803 /* SBJsonBase.m in Sources */,
+				D3D51ED4129AC15F00362803 /* SBJsonParser.m in Sources */,
+				D3D51ED5129AC15F00362803 /* SBJsonStreamWriter.m in Sources */,
+				D3D51ED6129AC15F00362803 /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,11 @@
 //
 
 #import "StoriesViewController.h"
+#import "MD5.h"
+#import "JSON.h"
 
+//NSString * const BASE_URL = @"http://hyperlocal-api.outside.in/v1.1";
+NSString * const BASE_URL = @"http://localhost:8081";
 
 @implementation StoriesViewController
 
@@ -28,32 +32,69 @@
 	
     // XXX: validate that key, secret and location were all provided
 
-    [self clearStories];
+    // clear display of existing stories
+    self.stories = [NSArray array];
     [tableView reloadData];
 
-    [self fetchStories];
+    // fetch and show new stories
+    self.stories = [self fetchStoriesInLocation:self.location];
     [tableView reloadData];
-
-    // [[[NSString alloc] initWithFormat:@"%d stories found", [storyFetcher.stories count] autorelease];
 }
+
+// story fetching
+
+- (NSArray *)fetchStoriesInLocation:(NSString *)theLocation {
+    NSString *escapedLocation = [theLocation stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSArray *locations = [[self request:[NSString stringWithFormat:@"/locations/named/%@", escapedLocation]] objectForKey:@"locations"];
+    if ([locations count] == 0) {
+        NSLog(@"No location named %@", theLocation);
+        return [NSArray array];
+    }
+    NSString *uuid = [[locations objectAtIndex:0] objectForKey:@"uuid"];
+    NSString *escapedUuid = [uuid stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return [[self request:[NSString stringWithFormat:@"/locations/%@/stories", escapedUuid]] objectForKey:@"stories"];
+}
+
+- (NSDictionary *)request:(NSString *)relativePath {
+    NSDictionary* data = nil;
+    NSURL *url = [self sign:relativePath];
+    NSLog(@"Requesting %@", url);
+    NSError *requestErr = nil;
+    NSString* str = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&requestErr];
+    if (requestErr == nil) {
+        SBJsonParser *parser = [SBJsonParser new];
+        NSError *parseErr = nil;
+        data = [parser objectWithString:str error:&parseErr];
+        if (parseErr != nil) {
+            NSLog(@"Parse failed: %@", [parseErr localizedDescription]);
+        }
+        [parser release];
+    } else {
+        NSLog(@"Request failed: %@", [requestErr localizedDescription]);
+    }
+    return data;
+}
+
+- (NSURL *)sign:(NSString *)relativePath {
+    long time = (long)[[NSDate date] timeIntervalSince1970];
+    NSString* sig = [MD5 md5hex:[NSString stringWithFormat:@"%@%@%d", key, secret, time]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?dev_key=%@&sig=%@", BASE_URL, relativePath, key, sig]];
+}
+
+// UIView
 
 - (void)viewDidLoad {
-    self.stories = [NSMutableArray arrayWithCapacity:10];
+    self.stories = [NSArray array];
 }
+
+// UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
 
-- (void)fetchStories {
-    NSMutableDictionary *story = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"This is a story", @"title", nil];
-    [stories addObject:story];
-}
-
-- (void)clearStories {
-    [stories removeAllObjects];
-}
+// UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView {
     return 1;
@@ -78,7 +119,16 @@
 }
 
 - (void)dealloc {
-    [stories dealloc];
+    [keyField release];
+    [secretField release];
+    [locationField release];
+    [tableView release];
+
+    [key release];
+    [secret release];
+    [location release];
+    [stories release];
+
     [super dealloc];
 }
 
