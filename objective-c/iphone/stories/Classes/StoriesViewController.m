@@ -10,8 +10,7 @@
 #import "MD5.h"
 #import "JSON.h"
 
-//NSString * const BASE_URL = @"http://hyperlocal-api.outside.in/v1.1";
-NSString * const BASE_URL = @"http://localhost:8081";
+NSString * const BASE_URL = @"http://hyperlocal-api.outside.in/v1.1";
 
 @implementation StoriesViewController
 
