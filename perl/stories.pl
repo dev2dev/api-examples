@@ -3,7 +3,7 @@
 use strict;
 
 unless (@ARGV == 3) {
-  warn "Usage: #{$0} <developer key> <shared secret> <location>";
+  warn "Usage: $0 <developer key> <shared secret> <location>";
   exit 1;
 }
 
